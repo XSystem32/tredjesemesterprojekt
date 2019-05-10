@@ -1,6 +1,9 @@
 package controller;
 
+import com.sun.javafx.geom.Rectangle;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -9,17 +12,24 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.Army;
 import model.Board;
+import view.GameView;
 
 public class Game extends Application {
+    private ObservableList<Node> children;
+    private GameView gameView;
+
 
     public static void main(String[] args) {
+        Game game = new Game();
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Canvas canvas = new Canvas(1280,720);
+        gameView = new GameView(primaryStage,1920,1080);
 
+
+        Canvas canvas = new Canvas(1280,720);
         GraphicsContext gc = canvas.getGraphicsContext2D();
         Pane root = new Pane();
         root.getChildren().add(canvas);
@@ -49,8 +59,10 @@ public class Game extends Application {
             }
 
             if (board.getFields().get(i-1).getOccupant() != null) {
+                Rectangle armyRect = new Rectangle((int)xOffset ,(int)yOffset,10,10);
                 gc.setFill(Color.GREEN);
-                gc.fillRect(xOffset,yOffset, 30,30);
+                gc.drawImage();
+
             }
 
 
