@@ -1,25 +1,25 @@
 package model;
 
+import javafx.scene.layout.StackPane;
+
 import java.util.ArrayList;
 import java.util.List;
 
 // board har ansvar for at lave og være det map som alle felterne er på.
-public class Board {
+public class Board extends StackPane {
     private List<Field> fields = new ArrayList<>();
     private int amountOfFields;
-    private int width;
-    private int height;
+    private int boardWidth;
+    private int boardHight;
 
-    public Board(int width, int height) {
-        this.width = width;
-        this.height = height;
-        amountOfFields = width * height;
+    public Board(int boardWidth, int boardHeight) {
+        this.boardWidth = boardWidth;
+        this.boardHight = boardHeight;
+        amountOfFields = boardHeight * boardWidth;
 
         for (int i = 0; i < amountOfFields; i++) {
             fields.add(new Field());
         }
-
-
     }
 
     public List<Field> getFields() {
@@ -38,19 +38,19 @@ public class Board {
         this.amountOfFields = amountOfFields;
     }
 
-    public int getWidth() {
-        return width;
+    public int getBoardWidth() {
+        return boardWidth;
     }
 
-    public void setWidth(int width) {
-        this.width = width;
+    public void setBoardWidth(int boardWidth) {
+        this.boardWidth = boardWidth;
     }
 
-    public int getHeight() {
-        return height;
+    public int getBoardHeight() {
+        return boardHight;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
+    public void setBoardHeight(int boardHeight) {
+        this.boardHight = boardHeight;
     }
 }
