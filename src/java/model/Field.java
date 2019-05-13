@@ -1,8 +1,10 @@
 package model;
 
+import javafx.scene.layout.StackPane;
+
 public class Field {
     private GameObject terrain;
-    private Object occupant;
+    private StackPane occupant;
 
     public Field(){}
 
@@ -14,11 +16,11 @@ public class Field {
         this.terrain = terrain;
     }
 
-    public Object getOccupant() {
+    public StackPane getOccupant() {
         return occupant;
     }
 
-    public void setOccupant(Object occupant) {
+    public void setOccupant(StackPane occupant) {
         this.occupant = occupant;
     }
 }

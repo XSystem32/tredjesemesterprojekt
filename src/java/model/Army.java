@@ -1,12 +1,19 @@
 package model;
 
-import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
-public class Army extends Pane {
+public class Army extends GameObject {
 
-
-    public Army(String url) {
+    public Army() {
+        Rectangle rectangle = new Rectangle(0,0,100,100);
+        rectangle.setFill(Color.CYAN);
+        children.add(rectangle);
     }
 
 
+    @Override
+    protected void handleMouseClick() {
+        System.out.println(this + " was clicked.");
+    }
 }
