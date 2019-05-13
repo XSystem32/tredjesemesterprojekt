@@ -1,12 +1,10 @@
 package model;
 
-import javafx.scene.layout.StackPane;
-
 import java.util.ArrayList;
 import java.util.List;
 
 // board har ansvar for at lave og være det map som alle felterne er på.
-public class Board extends StackPane {
+public class Board extends GameObject {
     private List<Field> fields = new ArrayList<>();
     private int amountOfFields;
     private int boardWidth;

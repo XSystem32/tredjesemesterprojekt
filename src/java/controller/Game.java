@@ -33,7 +33,7 @@ public class Game extends Application {
         double xOffset = 0;
         double yOffset = 0;
 
-        for () {}
+        
 
 
         children.add(army);

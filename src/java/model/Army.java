@@ -2,11 +2,10 @@ package model;
 
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class Army extends StackPane {
+public class Army extends GameObject {
     private ObservableList<Node> children;
     private Rectangle rectangle;
 
