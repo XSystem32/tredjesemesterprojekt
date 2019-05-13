@@ -1,5 +1,7 @@
 package model;
 
+import javafx.scene.layout.GridPane;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,19 +11,30 @@ public class Board extends GameObject {
     private int amountOfFields;
     private int boardWidth;
     private int boardHight;
+    private GridPane gridPane = new GridPane();
 
     public Board(int boardWidth, int boardHeight) {
         this.boardWidth = boardWidth;
         this.boardHight = boardHeight;
         amountOfFields = boardHeight * boardWidth;
 
-        for (int i = 0; i < amountOfFields; i++) {
-            fields.add(new Field());
+        for (int i = 0; i < getBoardHeight(); i++) {
+            for (int j = 0; j < getBoardWidth(); j++){
+                gridPane.add(new Field(), j,i);
+            }
         }
     }
 
     public List<Field> getFields() {
         return fields;
+    }
+
+    public GridPane getGridPane() {
+        return gridPane;
+    }
+
+    public void setGridPane(GridPane gridPane) {
+        this.gridPane = gridPane;
     }
 
     public void setFields(List<Field> fields) {

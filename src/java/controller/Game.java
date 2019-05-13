@@ -1,10 +1,9 @@
 package controller;
 
 import javafx.application.Application;
-
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
-
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.Army;
 import model.Board;
@@ -24,13 +23,22 @@ public class Game extends Application {
         gameView = new GameView(primaryStage,1280,720);
         ObservableList<Node> children = gameView.getChildren();
 
+        primaryStage.setTitle("GridPane Experiment");
 
 
 
-        Board board = new Board(16, 9);
+
+
+
+        Board board = new Board(12, 2);
         Army army = new Army();
 
-        board.getFields().get(34).setOccupant(army);
+
+        Scene scene = new Scene(board.getGridPane(), 240, 100);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+//        board.getFields().get(34).setOccupant(army);
 
         double sideLength = 50;
         double xOffset = 0;
