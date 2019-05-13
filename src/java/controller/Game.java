@@ -4,8 +4,8 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.Army;
 import model.Board;
@@ -18,6 +18,8 @@ public class Game extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+
         Canvas canvas = new Canvas(1280,720);
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
@@ -49,13 +51,13 @@ public class Game extends Application {
             }
 
             if (board.getFields().get(i-1).getOccupant() != null) {
-                gc.setFill(Color.GREEN);
-                gc.fillRect(xOffset,yOffset, 30,30);
+                gc.drawImage(new Image("defaultImage.png"),xOffset,yOffset);
+                //gc.setFill(Color.GREEN);
+                //gc.fillRect(xOffset,yOffset, 30,30);
             }
 
 
         }
-
 
 
 
