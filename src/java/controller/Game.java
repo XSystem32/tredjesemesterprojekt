@@ -5,7 +5,6 @@ import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.Army;
 import model.Board;
 import view.GameView;
 
@@ -31,42 +30,16 @@ public class Game extends Application {
 
 
         Board board = new Board(12, 15);
-        Army army = new Army();
 
 
         Scene scene = new Scene(board.getGridPane(), 600, 860);
         primaryStage.setScene(scene);
         primaryStage.show();
 
-//        board.getFields().get(34).setOccupant(army);
-
-        double sideLength = 50;
-        double xOffset = 0;
-        double yOffset = 0;
-
-        
-
-
-
-        children.add(army);
 
 
 
 
-
-
-
-    }
-    public void lastClick(){
-
-    }
-
-    private void initStage(Stage primaryStage){
-        primaryStage.setTitle("Orkriddernes Elverforbandelse");
-        primaryStage.setResizable(false);
-        primaryStage.setMinWidth(1280);
-        primaryStage.setMinHeight(720);
-        primaryStage.show();
 
     }
 }
