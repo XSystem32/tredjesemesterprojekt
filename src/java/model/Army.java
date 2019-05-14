@@ -6,14 +6,14 @@ import javafx.scene.shape.Rectangle;
 public class Army extends GameObject {
 
     public Army() {
-        Rectangle rectangle = new Rectangle(0,0,100,100);
-        rectangle.setFill(Color.CYAN);
+        Rectangle rectangle = new Rectangle(100,100);
+        rectangle.setFill(Color.RED);
         children.add(rectangle);
     }
 
 
     @Override
     protected void handleMouseClick() {
-        System.out.println(this + " was clicked.");
+        System.out.println(this + " was clicked.  " + getLayoutX() + "  "  + getLayoutY());
     }
 }
