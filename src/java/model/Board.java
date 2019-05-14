@@ -17,10 +17,14 @@ public class Board extends GameObject {
         this.boardWidth = boardWidth;
         this.boardHight = boardHeight;
         amountOfFields = boardHeight * boardWidth;
-
+        // laver fields og ligger på gridPane og sætter fields x(x = j) og (y=i)
         for (int i = 0; i < getBoardHeight(); i++) {
             for (int j = 0; j < getBoardWidth(); j++){
-                gridPane.add(new Field(), j,i);
+                Field field = new Field();
+                field.setX(j);
+                field.setY(i);
+                gridPane.add(field, j,i);
+
             }
         }
     }
@@ -35,6 +39,11 @@ public class Board extends GameObject {
 
     public void setGridPane(GridPane gridPane) {
         this.gridPane = gridPane;
+    }
+    @Override
+    protected GameObject handleMouseClick() {
+        System.out.println(this + " was clicked.");
+        return this;
     }
 
     public void setFields(List<Field> fields) {

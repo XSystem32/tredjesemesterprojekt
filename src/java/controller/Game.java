@@ -34,7 +34,7 @@ public class Game extends Application {
         Army army = new Army();
 
 
-        Scene scene = new Scene(board.getGridPane(), 240, 100);
+        Scene scene = new Scene(board.getGridPane(), 600, 860);
         primaryStage.setScene(scene);
         primaryStage.show();
 
@@ -55,6 +55,9 @@ public class Game extends Application {
 
 
 
+
+    }
+    public void lastClick(){
 
     }
 

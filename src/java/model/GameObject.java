@@ -8,14 +8,13 @@ import javafx.scene.layout.StackPane;
 public abstract class GameObject extends StackPane {
     protected ObservableList<Node> children = this.getChildren();
 
-    public GameObject(){
+    public GameObject() {
         this.setOnMouseClicked(event -> handleMouseClick());
     }
 
 
-
-    protected void handleMouseClick() {
-
+    protected GameObject handleMouseClick() {
+        System.out.println(this + " was clicked.");
+    return this;
     }
-
 }

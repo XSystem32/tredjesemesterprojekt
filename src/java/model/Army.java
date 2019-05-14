@@ -13,7 +13,8 @@ public class Army extends GameObject {
 
 
     @Override
-    protected void handleMouseClick() {
+    protected GameObject handleMouseClick() {
         System.out.println(this + " was clicked.");
+        return this;
     }
 }
