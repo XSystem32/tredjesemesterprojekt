@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.Army;
+import model.Board;
 import view.GameView;
 
 public class Game extends Application {
@@ -24,7 +25,11 @@ public class Game extends Application {
         gameView = new GameView(primaryStage,1280,720);
         ObservableList<Node> children = gameView.getChildren();
 
+        primaryStage.setTitle("GridPane Experiment");
 
+
+
+        Board board = new Board(10, 10);
 
         Army army = new Army();
         Army otherArmy = new Army();
@@ -34,17 +39,16 @@ public class Game extends Application {
 
 
 
-        GridPane gridPane = new GridPane();
-        gridPane.setMinSize(800, 800);
-        gridPane.setPadding(new Insets(10, 10, 10, 10));
+        board.getGridPane().setPadding(new Insets(10, 10, 10, 10));
 
 
-        gridPane.add(fourthArmy,50,400);
-        gridPane.add(otherArmy,30,700);
-        gridPane.add(thirdArmy,800,100);
-        gridPane.add(firstArmy,700,500);
+        board.getGridPane().add(fourthArmy,1,3);
+        board.getGridPane().add(otherArmy,3,5);
+        board.getGridPane().add(thirdArmy,5,8);
+        board.getGridPane().add(firstArmy,7,3);
 
-        Scene scene = new Scene(gridPane);
+        Scene scene = new Scene(board.getGridPane(), 550, 550);
+
 
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -54,6 +58,17 @@ public class Game extends Application {
 
 
 
+
+
+
+    }
+
+    private void initStage(Stage primaryStage){
+        primaryStage.setTitle("Orkriddernes Elverforbandelse");
+        primaryStage.setResizable(false);
+        primaryStage.setMinWidth(1280);
+        primaryStage.setMinHeight(720);
+        primaryStage.show();
 
     }
 }
