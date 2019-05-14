@@ -30,7 +30,7 @@ public class Game extends Application {
 
 
 
-        Board board = new Board(12, 2);
+        Board board = new Board(12, 15);
         Army army = new Army();
 
 
